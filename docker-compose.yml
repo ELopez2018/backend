@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  seek:
+    container_name: seek
+    image: estarlinlopez/seek
+    ports:
+      - "8087:8087"
+    environment:
+      DB_HOST: 35.168.238.21
+      DB_PORT: 5540
+      DB_USERNAME: postgres
+      DB_PASSWORD: 123456
+      DB_DATABASE: seek_db
+    networks:
+      - seek
+    restart: always
+networks:
+  seek:
+    name: seek
